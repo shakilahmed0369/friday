@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FRIDAY — Independent journalism</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <div class="reading-progress" aria-hidden="true"></div>
+
+    <!-- Header -->
+    <header class="header">
+      <a class="skip-link" href="#main">Skip to content</a>
+      <div class="masthead">
+        <a class="brand" href="index.html" aria-label="Friday home">
+          <svg class="mark" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 0C12.6 7 17 11.4 24 12 17 12.6 12.6 17 12 24 11.4 17 7 12.6 0 12 7 11.4 11.4 7 12 0Z" fill="currentColor" />
+          </svg>
+          <span>FRIDAY</span>
+        </a>
+        <p>INDEPENDENT JOURNALISM<br>FOR A CURIOUS WORLD</p>
+        <p class="issue">TUESDAY, JUNE 24<br>EDITION № 218</p>
+        <button class="menu-button" type="button" aria-expanded="false">MENU</button>
+      </div>
+      <nav class="nav" aria-label="Main navigation">
+        <a class="active" href="index.html" aria-current="page">Home</a>
+        <a href="category.html?c=world">World</a>
+        <a href="category.html?c=business">Business</a>
+        <a href="category.html?c=travel">Travel</a>
+        <a href="category.html?c=tech">Tech</a>
+        <a href="category.html?c=fashion">Fashion</a>
+        <a href="category.html?c=lifestyle">Lifestyle</a>
+        <button class="search" type="button" aria-label="Open search" aria-expanded="false">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.75" />
+            <path d="m15.5 15.5 4 4" fill="none" stroke="currentColor" stroke-width="1.75" />
+          </svg>
+        </button>
+        <a class="sign-in" href="sign-in.html">Sign in</a>
+      </nav>
+      <form class="header-search-panel" role="search" hidden>
+        <label htmlFor="site-search">SEARCH THE FRIDAY ARCHIVE</label>
+        <input id="site-search" name="q" type="search" placeholder="TYPE A TOPIC, PLACE OR AUTHOR">
+        <button type="submit">
+          SEARCH
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 12h14m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" />
+          </svg>
+        </button>
+      </form>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main">
+      <!-- Hero Section -->
+      <section class="hero" aria-labelledby="today-title">
+        <div class="lead cell">
+          <p class="eyebrow">THE FRONT PAGE / VOL. 04</p>
+          <h1 id="today-title">TODAY’S<br>NEWS</h1>
+          <p class="meta">— WORLD <b>●</b> BY THE EDITORS <b>●</b> 24 JUN 2025</p>
+          <h2>A new era of urban life is already taking shape</h2>
+          <p class="intro">Across the world, the old rules of city living are being rewritten. From shared streets to greener skylines, a bold experiment is underway.</p>
+          <figure class="crop-frame">
+            <img src="news/city.jpg" alt="High-rise buildings reaching into a pale sky">
+            <span class="crop tl"></span><span class="crop tr"></span><span class="crop bl"></span><span class="crop br"></span>
+          </figure>
+        </div>
+
+        <div class="headlines">
+          <div class="column-label"><span>THE LATEST</span><span>08 STORIES</span></div>
+          <a class="headline" href="#latest">
+            <p class="meta">— BUSINESS <b>●</b> BY THE EDITORS <b>●</b> 24 JUN 2025</p>
+            <h3>Markets brace for a decisive week as investors seek a clearer signal</h3>
+            <span class="arrow">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+            </span>
+          </a>
+          <a class="headline" href="#latest">
+            <p class="meta">— TRAVEL <b>●</b> BY THE EDITORS <b>●</b> 24 JUN 2025</p>
+            <h3>The night train revival is redrawing the map of European travel</h3>
+            <span class="arrow">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+            </span>
+          </a>
+          <a class="headline" href="#latest">
+            <p class="meta">— TECHNOLOGY <b>●</b> BY THE EDITORS <b>●</b> 24 JUN 2025</p>
+            <h3>A quieter kind of innovation is changing the shape of our cities</h3>
+            <span class="arrow">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+            </span>
+          </a>
+          <a class="headline" href="#latest">
+            <p class="meta">— CULTURE <b>●</b> BY THE EDITORS <b>●</b> 24 JUN 2025</p>
+            <h3>Inside the archives preserving the everyday stories of a generation</h3>
+            <span class="arrow">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+            </span>
+          </a>
+        </div>
+
+        <div class="feature cell" aria-roledescription="carousel" aria-label="Featured stories">
+          <div class="feature-top">
+            <span>FEATURED</span>
+            <button type="button" aria-label="Pause carousel">PAUSE</button>
+            <span>01 / 03</span>
+          </div>
+          <div class="stacked-photo">
+            <img class="feature-slide-media" src="news/escalator.jpg" alt="Person moving along an escalator">
+            <span class="fold"></span>
+          </div>
+          <div class="feature-slide-copy">
+            <p class="meta">— THE WEEKENDER <b>●</b> BY THE EDITORS <b>●</b> 24 JUN 2025</p>
+            <h2>Designing cities for the way we move now</h2>
+          </div>
+          <div class="slide-controls">
+            <button type="button" aria-label="Previous story">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m5-5-5 5 5 5" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+            </button>
+            <span><i style="width: 33.333%;"></i></span>
+            <button type="button" aria-label="Next story">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+            </button>
+          </div>
+        </div>
+        <svg class="star" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 0C12.6 7 17 11.4 24 12 17 12.6 12.6 17 12 24 11.4 17 7 12.6 0 12 7 11.4 11.4 7 12 0Z" />
+        </svg>
+      </section>
+
+      <!-- Breaking Ticker -->
+      <div class="ticker" aria-label="Breaking news">
+        <div class="ticker-track" aria-hidden="true">
+          <div class="ticker-group">
+            <span class="ticker-item">
+              <strong>BREAKING NEWS</strong>
+              <svg class="ticker-star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C12.6 7 17 11.4 24 12 17 12.6 12.6 17 12 24 11.4 17 7 12.6 0 12 7 11.4 11.4 7 12 0Z" /></svg>
+              Markets open higher following overnight talks
+              <svg class="ticker-star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C12.6 7 17 11.4 24 12 17 12.6 12.6 17 12 24 11.4 17 7 12.6 0 12 7 11.4 11.4 7 12 0Z" /></svg>
+            </span>
+            <span class="ticker-item">
+              <strong>BREAKING NEWS</strong>
+              <svg class="ticker-star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C12.6 7 17 11.4 24 12 17 12.6 12.6 17 12 24 11.4 17 7 12.6 0 12 7 11.4 11.4 7 12 0Z" /></svg>
+              Coastal cities announce shared climate plan
+              <svg class="ticker-star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C12.6 7 17 11.4 24 12 17 12.6 12.6 17 12 24 11.4 17 7 12.6 0 12 7 11.4 11.4 7 12 0Z" /></svg>
+            </span>
+            <span class="ticker-item">
+              <strong>BREAKING NEWS</strong>
+              <svg class="ticker-star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C12.6 7 17 11.4 24 12 17 12.6 12.6 17 12 24 11.4 17 7 12.6 0 12 7 11.4 11.4 7 12 0Z" /></svg>
+              World leaders gather for a new round of talks
+              <svg class="ticker-star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C12.6 7 17 11.4 24 12 17 12.6 12.6 17 12 24 11.4 17 7 12.6 0 12 7 11.4 11.4 7 12 0Z" /></svg>
+            </span>
+          </div>
+          <div class="ticker-group">
+            <span class="ticker-item">
+              <strong>BREAKING NEWS</strong>
+              <svg class="ticker-star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C12.6 7 17 11.4 24 12 17 12.6 12.6 17 12 24 11.4 17 7 12.6 0 12 7 11.4 11.4 7 12 0Z" /></svg>
+              Markets open higher following overnight talks
+              <svg class="ticker-star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C12.6 7 17 11.4 24 12 17 12.6 12.6 17 12 24 11.4 17 7 12.6 0 12 7 11.4 11.4 7 12 0Z" /></svg>
+            </span>
+            <span class="ticker-item">
+              <strong>BREAKING NEWS</strong>
+              <svg class="ticker-star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C12.6 7 17 11.4 24 12 17 12.6 12.6 17 12 24 11.4 17 7 12.6 0 12 7 11.4 11.4 7 12 0Z" /></svg>
+              Coastal cities announce shared climate plan
+              <svg class="ticker-star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C12.6 7 17 11.4 24 12 17 12.6 12.6 17 12 24 11.4 17 7 12.6 0 12 7 11.4 11.4 7 12 0Z" /></svg>
+            </span>
+            <span class="ticker-item">
+              <strong>BREAKING NEWS</strong>
+              <svg class="ticker-star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C12.6 7 17 11.4 24 12 17 12.6 12.6 17 12 24 11.4 17 7 12.6 0 12 7 11.4 11.4 7 12 0Z" /></svg>
+              World leaders gather for a new round of talks
+              <svg class="ticker-star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C12.6 7 17 11.4 24 12 17 12.6 12.6 17 12 24 11.4 17 7 12.6 0 12 7 11.4 11.4 7 12 0Z" /></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Breaking Section -->
+      <section class="breaking-section" aria-labelledby="breaking-title">
+        <header class="section-heading">
+          <div>
+            <p class="eyebrow">LIVE / DEVELOPING</p>
+            <h2 id="breaking-title">BREAKING NEWS</h2>
+          </div>
+          <a href="category.html?c=world">
+            VIEW ALL UPDATES
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+          </a>
+        </header>
+        <div class="breaking-grid">
+          <article class="breaking-lead">
+            <a class="breaking-image" href="article.html">
+              <img src="news/city.jpg" alt="City skyline viewed between modern buildings">
+              <span>LIVE</span>
+            </a>
+            <div>
+              <p class="meta">— WORLD <b>●</b> UPDATED 4 MIN AGO</p>
+              <h3><a href="article.html">World leaders gather for an emergency round of climate talks</a></h3>
+              <p>Follow the latest developments, statements and analysis from our correspondents on the ground.</p>
+            </div>
+          </article>
+          <div class="breaking-updates">
+            <article>
+              <time>11:42</time>
+              <div>
+                <span>UPDATE 1</span>
+                <h3><a href="article.html">Coastal cities announce a shared resilience agreement</a></h3>
+              </div>
+              <a href="article.html" aria-label="Read update: Coastal cities announce a shared resilience agreement">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+              </a>
+            </article>
+            <article>
+              <time>11:18</time>
+              <div>
+                <span>UPDATE 2</span>
+                <h3><a href="article.html">Markets respond as the first joint statement is released</a></h3>
+              </div>
+              <a href="article.html" aria-label="Read update: Markets respond as the first joint statement is released">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+              </a>
+            </article>
+            <article>
+              <time>10:51</time>
+              <div>
+                <span>UPDATE 3</span>
+                <h3><a href="article.html">Delegates outline the priorities shaping today’s talks</a></h3>
+              </div>
+              <a href="article.html" aria-label="Read update: Delegates outline the priorities shaping today’s talks">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+              </a>
+            </article>
+            <article>
+              <time>10:26</time>
+              <div>
+                <span>UPDATE 4</span>
+                <h3><a href="article.html">What to know as leaders arrive for the summit</a></h3>
+              </div>
+              <a href="article.html" aria-label="Read update: What to know as leaders arrive for the summit">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+              </a>
+            </article>
+          </div>
+          <svg class="star star-breaking" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 0C12.6 7 17 11.4 24 12 17 12.6 12.6 17 12 24 11.4 17 7 12.6 0 12 7 11.4 11.4 7 12 0Z" />
+          </svg>
+        </div>
+      </section>
+
+      <!-- News By Category -->
+      <section class="news-by-category" aria-labelledby="category-news-title">
+        <div class="news-by-category-intro section-heading">
+          <div>
+            <p class="eyebrow">THE FRIDAY EDIT</p>
+            <h2 id="category-news-title">NEWS BY CATEGORY</h2>
+          </div>
+        </div>
+
+        <!-- World Group -->
+        <section class="category-news-group" aria-labelledby="world-news">
+          <header>
+            <h3 id="world-news">World</h3>
+            <a href="category.html?c=world">
+              SHOW MORE
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+            </a>
+          </header>
+          <div class="category-posts">
+            <article>
+              <a class="category-post-image" href="article.html"><img src="news/city.jpg" alt="" loading="lazy"></a>
+              <time datetime="2025-06-24">24 JUN 2025</time>
+              <h4><a href="article.html">Coastal cities unite around a new resilience plan</a></h4>
+              <a class="category-post-arrow" href="article.html" aria-label="Read story">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+              </a>
+            </article>
+            <article>
+              <a class="category-post-image" href="article.html"><img src="news/station.jpg" alt="" loading="lazy"></a>
+              <time datetime="2025-06-24">23 JUN 2025</time>
+              <h4><a href="article.html">The night train routes reconnecting a continent</a></h4>
+              <a class="category-post-arrow" href="article.html" aria-label="Read story">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+              </a>
+            </article>
+            <article>
+              <a class="category-post-image" href="article.html"><img src="news/gallery.jpg" alt="" loading="lazy"></a>
+              <time datetime="2025-06-24">21 JUN 2025</time>
+              <h4><a href="article.html">Inside the public spaces transforming daily life</a></h4>
+              <a class="category-post-arrow" href="article.html" aria-label="Read story">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+              </a>
+            </article>
+            <article>
+              <a class="category-post-image" href="article.html"><img src="news/portrait.jpg" alt="" loading="lazy"></a>
+              <time datetime="2025-06-24">19 JUN 2025</time>
+              <h4><a href="article.html">A new generation of leaders takes on local change</a></h4>
+              <a class="category-post-arrow" href="article.html" aria-label="Read story">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+              </a>
+            </article>
+            <article>
+              <a class="category-post-image" href="article.html"><img src="news/walk.jpg" alt="" loading="lazy"></a>
+              <time datetime="2025-06-24">18 JUN 2025</time>
+              <h4><a href="article.html">How communities are restoring their shared waterfronts</a></h4>
+              <a class="category-post-arrow" href="article.html" aria-label="Read story">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+              </a>
+            </article>
+            <article>
+              <a class="category-post-image" href="article.html"><img src="news/culture.jpg" alt="" loading="lazy"></a>
+              <time datetime="2025-06-24">16 JUN 2025</time>
+              <h4><a href="article.html">The cultural institutions opening their archives</a></h4>
+              <a class="category-post-arrow" href="article.html" aria-label="Read story">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+              </a>
+            </article>
+            <svg class="star star-small grid-star grid-star-left" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 0C12.6 7 17 11.4 24 12 17 12.6 12.6 17 12 24 11.4 17 7 12.6 0 12 7 11.4 11.4 7 12 0Z" />
+            </svg>
+            <svg class="star star-small grid-star grid-star-right" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 0C12.6 7 17 11.4 24 12 17 12.6 12.6 17 12 24 11.4 17 7 12.6 0 12 7 11.4 11.4 7 12 0Z" />
+            </svg>
+          </div>
+        </section>
+
+        <!-- Business Group -->
+        <section class="category-news-group" aria-labelledby="business-news">
+          <header>
+            <h3 id="business-news">Business</h3>
+            <a href="category.html?c=business">
+              SHOW MORE
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+            </a>
+          </header>
+          <div class="category-posts">
+            <article>
+              <a class="category-post-image" href="article.html"><img src="news/walk.jpg" alt="" loading="lazy"></a>
+              <time datetime="2025-06-24">24 JUN 2025</time>
+              <h4><a href="article.html">Independent makers find strength in local markets</a></h4>
+              <a class="category-post-arrow" href="article.html" aria-label="Read story">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+              </a>
+            </article>
+            <article>
+              <a class="category-post-image" href="article.html"><img src="news/escalator.jpg" alt="" loading="lazy"></a>
+              <time datetime="2025-06-24">22 JUN 2025</time>
+              <h4><a href="article.html">The new offices designed around deep focus</a></h4>
+              <a class="category-post-arrow" href="article.html" aria-label="Read story">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+              </a>
+            </article>
+            <article>
+              <a class="category-post-image" href="article.html"><img src="news/culture.jpg" alt="" loading="lazy"></a>
+              <time datetime="2025-06-24">20 JUN 2025</time>
+              <h4><a href="article.html">Why patient companies are winning loyal customers</a></h4>
+              <a class="category-post-arrow" href="article.html" aria-label="Read story">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+              </a>
+            </article>
+            <article>
+              <a class="category-post-image" href="article.html"><img src="news/station.jpg" alt="" loading="lazy"></a>
+              <time datetime="2025-06-24">19 JUN 2025</time>
+              <h4><a href="article.html">Small manufacturers rethink the global supply chain</a></h4>
+              <a class="category-post-arrow" href="article.html" aria-label="Read story">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+              </a>
+            </article>
+            <article>
+              <a class="category-post-image" href="article.html"><img src="news/portrait.jpg" alt="" loading="lazy"></a>
+              <time datetime="2025-06-24">17 JUN 2025</time>
+              <h4><a href="article.html">The founders putting long-term value before growth</a></h4>
+              <a class="category-post-arrow" href="article.html" aria-label="Read story">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+              </a>
+            </article>
+            <article>
+              <a class="category-post-image" href="article.html"><img src="news/city.jpg" alt="" loading="lazy"></a>
+              <time datetime="2025-06-24">15 JUN 2025</time>
+              <h4><a href="article.html">City-center shops find a second life after dark</a></h4>
+              <a class="category-post-arrow" href="article.html" aria-label="Read story">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+              </a>
+            </article>
+            <svg class="star star-small grid-star grid-star-left" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 0C12.6 7 17 11.4 24 12 17 12.6 12.6 17 12 24 11.4 17 7 12.6 0 12 7 11.4 11.4 7 12 0Z" />
+            </svg>
+            <svg class="star star-small grid-star grid-star-right" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 0C12.6 7 17 11.4 24 12 17 12.6 12.6 17 12 24 11.4 17 7 12.6 0 12 7 11.4 11.4 7 12 0Z" />
+            </svg>
+          </div>
+        </section>
+
+        <!-- Technology Group -->
+        <section class="category-news-group" aria-labelledby="tech-news">
+          <header>
+            <h3 id="tech-news">Technology</h3>
+            <a href="category.html?c=tech">
+              SHOW MORE
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+            </a>
+          </header>
+          <div class="category-posts">
+            <article>
+              <a class="category-post-image" href="article.html"><img src="news/escalator.jpg" alt="" loading="lazy"></a>
+              <time datetime="2025-06-24">23 JUN 2025</time>
+              <h4><a href="article.html">A quieter generation of technology is taking shape</a></h4>
+              <a class="category-post-arrow" href="article.html" aria-label="Read story">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+              </a>
+            </article>
+            <article>
+              <a class="category-post-image" href="article.html"><img src="news/city.jpg" alt="" loading="lazy"></a>
+              <time datetime="2025-06-24">21 JUN 2025</time>
+              <h4><a href="article.html">How city data can serve the people who create it</a></h4>
+              <a class="category-post-arrow" href="article.html" aria-label="Read story">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+              </a>
+            </article>
+            <article>
+              <a class="category-post-image" href="article.html"><img src="news/gallery.jpg" alt="" loading="lazy"></a>
+              <time datetime="2025-06-24">18 JUN 2025</time>
+              <h4><a href="article.html">The small tools changing how creative teams work</a></h4>
+              <a class="category-post-arrow" href="article.html" aria-label="Read story">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+              </a>
+            </article>
+            <article>
+              <a class="category-post-image" href="article.html"><img src="news/culture.jpg" alt="" loading="lazy"></a>
+              <time datetime="2025-06-24">17 JUN 2025</time>
+              <h4><a href="article.html">Inside the labs making batteries last much longer</a></h4>
+              <a class="category-post-arrow" href="article.html" aria-label="Read story">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+              </a>
+            </article>
+            <article>
+              <a class="category-post-image" href="article.html"><img src="news/walk.jpg" alt="" loading="lazy"></a>
+              <time datetime="2025-06-24">16 JUN 2025</time>
+              <h4><a href="article.html">Why the next interface may barely need a screen</a></h4>
+              <a class="category-post-arrow" href="article.html" aria-label="Read story">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+              </a>
+            </article>
+            <article>
+              <a class="category-post-image" href="article.html"><img src="news/station.jpg" alt="" loading="lazy"></a>
+              <time datetime="2025-06-24">14 JUN 2025</time>
+              <h4><a href="article.html">A practical guide to a calmer digital routine</a></h4>
+              <a class="category-post-arrow" href="article.html" aria-label="Read story">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+              </a>
+            </article>
+            <svg class="star star-small grid-star grid-star-left" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 0C12.6 7 17 11.4 24 12 17 12.6 12.6 17 12 24 11.4 17 7 12.6 0 12 7 11.4 11.4 7 12 0Z" />
+            </svg>
+            <svg class="star star-small grid-star grid-star-right" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 0C12.6 7 17 11.4 24 12 17 12.6 12.6 17 12 24 11.4 17 7 12.6 0 12 7 11.4 11.4 7 12 0Z" />
+            </svg>
+          </div>
+        </section>
+      </section>
+
+      <!-- Statement / Explore Newsroom -->
+      <section class="statement section-heading">
+        <div>
+          <p class="eyebrow">EXPLORE THE NEWSROOM</p>
+          <h2>FEATURED <u>CATEGORIES</u></h2>
+        </div>
+        <div class="scroll-badge" aria-hidden="true">
+          <span>
+            <svg viewBox="0 0 100 100">
+              <defs><path id="scroll-circle" d="M50,50 m-36,0 a36,36 0 1,1 72,0 a36,36 0 1,1 -72,0" /></defs>
+              <text>
+                <textPath href="#scroll-circle" textLength="226" lengthAdjust="spacingAndGlyphs">
+                  SCROLL DOWN • KEEP READING •
+                </textPath>
+              </text>
+            </svg>
+          </span>
+          <b>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14m-5-5 5 5 5-5" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+          </b>
+        </div>
+      </section>
+
+      <!-- Card Grid -->
+      <section class="card-grid" id="latest" aria-label="Latest stories">
+        <article class="story-card">
+          <div class="section-label">
+            <span>Lifestyle <sup>76</sup></span>
+            <a href="category.html?c=lifestyle">
+              VIEW ALL
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+            </a>
+          </div>
+          <div class="photo-print"><img src="news/walk.jpg" alt="" loading="lazy"></div>
+          <p class="meta">— LIFESTYLE <b>●</b> BY THE EDITORS <b>●</b> 24 JUN 2025</p>
+          <h3>Why the simple rituals of morning still matter</h3>
+          <a class="card-arrow" href="article.html" aria-label="Read: Why the simple rituals of morning still matter">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+          </a>
+        </article>
+
+        <article class="story-card">
+          <div class="section-label">
+            <span>World <sup>42</sup></span>
+            <a href="category.html?c=world">
+              VIEW ALL
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+            </a>
+          </div>
+          <div class="photo-print"><img src="news/city.jpg" alt="" loading="lazy"></div>
+          <p class="meta">— WORLD <b>●</b> BY THE EDITORS <b>●</b> 24 JUN 2025</p>
+          <h3>Cities rethink public space for a changing climate</h3>
+          <a class="card-arrow" href="article.html" aria-label="Read: Cities rethink public space for a changing climate">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+          </a>
+        </article>
+
+        <article class="story-card">
+          <div class="section-label">
+            <span>Travel <sup>31</sup></span>
+            <a href="category.html?c=travel">
+              VIEW ALL
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+            </a>
+          </div>
+          <div class="photo-print"><img src="news/station.jpg" alt="" loading="lazy"></div>
+          <p class="meta">— TRAVEL <b>●</b> BY THE EDITORS <b>●</b> 24 JUN 2025</p>
+          <h3>The stations worth making a journey for</h3>
+          <a class="card-arrow" href="article.html" aria-label="Read: The stations worth making a journey for">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+          </a>
+        </article>
+        <svg class="star star-small grid-star-edge grid-star-left" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 0C12.6 7 17 11.4 24 12 17 12.6 12.6 17 12 24 11.4 17 7 12.6 0 12 7 11.4 11.4 7 12 0Z" />
+        </svg>
+        <svg class="star star-small grid-star-edge grid-star-right" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 0C12.6 7 17 11.4 24 12 17 12.6 12.6 17 12 24 11.4 17 7 12.6 0 12 7 11.4 11.4 7 12 0Z" />
+        </svg>
+      </section>
+
+      <!-- Editor's Picks -->
+      <section class="editors-picks" aria-labelledby="editors-title">
+        <header class="band-heading section-heading">
+          <div>
+            <p class="eyebrow">CURATED BY OUR NEWSROOM</p>
+            <h2 id="editors-title">EDITOR’S PICKS</h2>
+          </div>
+          <a href="category.html?c=world">
+            VIEW ALL STORIES
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+          </a>
+        </header>
+        <div class="editor-grid">
+          <article class="editor-lead">
+            <img src="news/gallery.jpg" alt="A lone figure walking through a geometric hallway" loading="lazy">
+            <div>
+              <p class="meta">— CULTURE <b>●</b> BY THE EDITORS <b>●</b> 24 JUN 2025</p>
+              <h3>The public buildings that make room for wonder</h3>
+              <p>From libraries to stations, the spaces proving that thoughtful design still belongs to everyone.</p>
+            </div>
+          </article>
+          <div class="editor-list">
+            <article>
+              <span>01</span>
+              <div>
+                <p class="meta">— SCIENCE <b>●</b> BY THE EDITORS <b>●</b> 24 JUN 2025</p>
+                <h3>The deep-sea mission rewriting what we know about life below</h3>
+              </div>
+              <a href="article.html" aria-label="Read: The deep-sea mission rewriting what we know about life below">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+              </a>
+            </article>
+            <article>
+              <span>02</span>
+              <div>
+                <p class="meta">— BUSINESS <b>●</b> BY THE EDITORS <b>●</b> 24 JUN 2025</p>
+                <h3>Independent makers are finding strength in smaller markets</h3>
+              </div>
+              <a href="article.html" aria-label="Read: Independent makers are finding strength in smaller markets">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+              </a>
+            </article>
+            <article>
+              <span>03</span>
+              <div>
+                <p class="meta">— TECHNOLOGY <b>●</b> BY THE EDITORS <b>●</b> 24 JUN 2025</p>
+                <h3>Can quieter technology help us reclaim our attention?</h3>
+              </div>
+              <a href="article.html" aria-label="Read: Can quieter technology help us reclaim our attention?">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+              </a>
+            </article>
+          </div>
+          <svg class="star star-editor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 0C12.6 7 17 11.4 24 12 17 12.6 12.6 17 12 24 11.4 17 7 12.6 0 12 7 11.4 11.4 7 12 0Z" />
+          </svg>
+        </div>
+      </section>
+
+      <!-- Most Read -->
+      <section class="most-read">
+        <div class="section-heading section-heading-rail">
+          <p class="eyebrow">THE READING LIST</p>
+          <h2>MOST<br>READ</h2>
+        </div>
+        <ol>
+          <li>
+            <span>01</span>
+            <a href="article.html">What we lose when every place starts to look the same</a>
+            <b><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg></b>
+          </li>
+          <li>
+            <span>02</span>
+            <a href="article.html">Five small inventions with an outsized impact</a>
+            <b><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg></b>
+          </li>
+          <li>
+            <span>03</span>
+            <a href="article.html">The case for taking the long way home</a>
+            <b><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg></b>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Opinion -->
+      <section class="opinion" aria-labelledby="opinion-title">
+        <div class="opinion-intro section-heading section-heading-rail">
+          <p class="eyebrow">VOICES & PERSPECTIVES</p>
+          <h2 id="opinion-title">OPINION</h2>
+          <a href="category.html?c=opinion">
+            ALL COLUMNS
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+          </a>
+        </div>
+        <article>
+          <img src="news/portrait.jpg" alt="Portrait of columnist Amara Reed" loading="lazy">
+          <div>
+            <p class="quote-mark">“</p>
+            <h3>We don’t need smarter cities. We need cities that listen.</h3>
+            <p class="opinion-copy">The best urban ideas begin not with technology, but with the ordinary expertise of the people who live there.</p>
+            <p class="meta">AMARA REED · URBAN AFFAIRS COLUMNIST</p>
+          </div>
+        </article>
+        <svg class="star star-opinion" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 0C12.6 7 17 11.4 24 12 17 12.6 12.6 17 12 24 11.4 17 7 12.6 0 12 7 11.4 11.4 7 12 0Z" />
+        </svg>
+      </section>
+
+      <!-- Visual Stories -->
+      <section class="visual-stories" aria-labelledby="visual-title">
+        <header class="band-heading section-heading">
+          <div>
+            <p class="eyebrow">WATCH / EXPLORE</p>
+            <h2 id="visual-title">VISUAL STORIES</h2>
+          </div>
+          <span class="meta">VIDEO & PHOTOGRAPHY</span>
+        </header>
+        <div class="visual-grid">
+          <a class="visual-main" href="article.html" aria-label="Play video: A city in motion">
+            <div class="visual-image">
+              <img src="news/culture.jpg" alt="Woman standing in front of an urban storefront" loading="lazy">
+              <span class="play">
+                <svg class="icon icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 5.5 18 12l-9.5 6.5Z" fill="currentColor" /></svg>
+              </span>
+            </div>
+          </a>
+          <div class="visual-right">
+            <a class="visual-side" href="article.html" aria-label="Play video: The rituals of the daily commute">
+              <div class="visual-image">
+                <img src="news/station.jpg" alt="Passengers moving through a railway station" loading="lazy">
+                <span class="play">
+                  <svg class="icon icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 5.5 18 12l-9.5 6.5Z" fill="currentColor" /></svg>
+                </span>
+              </div>
+            </a>
+            <div class="video-row">
+              <a class="video-card" href="article.html" aria-label="Play video: The corner where the whole city seems to meet">
+                <div class="visual-image">
+                  <img src="news/video-city.jpg" alt="Crowds moving along a city pavement" loading="lazy">
+                  <span class="play play-small">
+                    <svg class="icon icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 5.5 18 12l-9.5 6.5Z" fill="currentColor" /></svg>
+                  </span>
+                </div>
+                <div class="video-list-copy">
+                  <h3>The corner where the whole city seems to meet</h3>
+                  <time datetime="2025-06-24">24 JUN 2025</time>
+                </div>
+              </a>
+              <a class="video-card" href="article.html" aria-label="Play video: Building public spaces that invite us to stay">
+                <div class="visual-image">
+                  <img src="news/video-plaza.jpg" alt="A person crossing a modern urban plaza" loading="lazy">
+                  <span class="play play-small">
+                    <svg class="icon icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 5.5 18 12l-9.5 6.5Z" fill="currentColor" /></svg>
+                  </span>
+                </div>
+                <div class="video-list-copy">
+                  <h3>Building public spaces that invite us to stay</h3>
+                  <time datetime="2025-06-24">22 JUN 2025</time>
+                </div>
+              </a>
+              <a class="video-card" href="article.html" aria-label="Play video: The people keeping neighborhood stories alive">
+                <div class="visual-image">
+                  <img src="news/video-portrait.jpg" alt="Portrait of an older man on a city street" loading="lazy">
+                  <span class="play play-small">
+                    <svg class="icon icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 5.5 18 12l-9.5 6.5Z" fill="currentColor" /></svg>
+                  </span>
+                </div>
+                <div class="video-list-copy">
+                  <h3>The people keeping neighborhood stories alive</h3>
+                  <time datetime="2025-06-24">19 JUN 2025</time>
+                </div>
+              </a>
+            </div>
+          </div>
+          <svg class="star star-visual" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 0C12.6 7 17 11.4 24 12 17 12.6 12.6 17 12 24 11.4 17 7 12.6 0 12 7 11.4 11.4 7 12 0Z" />
+          </svg>
+        </div>
+      </section>
+
+      <!-- Newsletter -->
+      <section class="newsletter" id="newsletter">
+        <p class="eyebrow">THE MORNING EDITION</p>
+        <h2>THE DAY, EDITED.</h2>
+        <p>Essential news and original reporting, delivered before your first coffee.</p>
+        <form>
+          <label for="email">EMAIL ADDRESS</label>
+          <input id="email" type="email" placeholder="you@example.com" required>
+          <button type="submit">
+            JOIN THE LIST
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.75" /></svg>
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="Friday home">
+            <svg class="mark" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 0C12.6 7 17 11.4 24 12 17 12.6 12.6 17 12 24 11.4 17 7 12.6 0 12 7 11.4 11.4 7 12 0Z" fill="currentColor" />
+            </svg>
+            <span>FRIDAY</span>
+          </a>
+          <p>Independent reporting for a curious world. Published every day, with context.</p>
+        </div>
+        <nav aria-label="Footer sections">
+          <b>SECTIONS</b>
+          <a href="category.html?c=world">World</a>
+          <a href="category.html?c=business">Business</a>
+          <a href="category.html?c=tech">Technology</a>
+        </nav>
+        <nav aria-label="Footer company">
+          <b>COMPANY</b>
+          <a href="mailto:hello@friday.news">Contact</a>
+          <a href="editorial-policy.html">Editorial policy</a>
+          <a href="about.html">About Friday</a>
+        </nav>
+        <nav aria-label="Footer legal">
+          <b>LEGAL</b>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="accessibility.html">Accessibility</a>
+        </nav>
+      </div>
+      <div class="footer-wordmark">FRIDAY</div>
+    </footer>
+  </div>
+
+  <!-- Local Downloaded Vendor Scripts -->
+  <script src="assets/js/vendor/gsap.min.js"></script>
+  <script src="assets/js/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/js/vendor/ScrollToPlugin.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
