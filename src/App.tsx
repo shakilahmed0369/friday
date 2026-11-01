@@ -319,16 +319,20 @@ export default function HomePage() {
         onUpdate: ({ progress }) => gsap.set('.reading-progress', { scaleX: progress }),
       })
 
+      // Keep header rock-solid on page navigation
       gsap
-        .timeline({ defaults: { ease: 'power3.out' } })
-        .from('.masthead > *', { y: -14, opacity: 0, duration: 0.55, stagger: 0.07 })
-        .from('.nav > *', { y: -8, opacity: 0, duration: 0.4, stagger: 0.035 }, '-=.25')
-        .from(
+        .timeline({ defaults: { ease: 'power2.out' } })
+        .fromTo(
           '.lead > .eyebrow, .lead > h1, .lead > .meta, .lead > h2, .lead > .intro',
-          { y: 24, opacity: 0, duration: 0.65, stagger: 0.07 },
-          '-=.15',
+          { opacity: 0, y: 12 },
+          { opacity: 1, y: 0, duration: 0.5, stagger: 0.05, clearProps: 'all' },
         )
-        .from('.crop-frame, .headlines, .feature', { y: 22, opacity: 0, duration: 0.7, stagger: 0.1 }, '-=.45')
+        .fromTo(
+          '.crop-frame, .headlines, .feature',
+          { opacity: 0, y: 12 },
+          { opacity: 1, y: 0, duration: 0.55, stagger: 0.06, clearProps: 'all' },
+          '-=.35',
+        )
 
       const revealSections = root.querySelectorAll<HTMLElement>(
         '.breaking-section, .category-news-group, .statement, .card-grid, .editors-picks, .most-read, .opinion, .visual-stories, .newsletter'
@@ -351,24 +355,24 @@ export default function HomePage() {
         if (heading) {
           sectionTl.fromTo(
             heading,
-            { opacity: 0, y: 14 },
-            { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out', clearProps: 'transform,opacity' }
+            { opacity: 0, y: 12 },
+            { opacity: 1, y: 0, duration: 0.45, ease: 'power2.out', clearProps: 'transform,opacity' }
           )
         }
 
         if (cards.length > 0) {
           sectionTl.fromTo(
             cards,
-            { opacity: 0, y: 16 },
+            { opacity: 0, y: 12 },
             {
               opacity: 1,
               y: 0,
-              duration: 0.5,
-              stagger: 0.05,
+              duration: 0.45,
+              stagger: 0.04,
               ease: 'power2.out',
               clearProps: 'transform,opacity',
             },
-            heading ? '-=0.3' : 0
+            heading ? '-=0.25' : 0
           )
         }
       })

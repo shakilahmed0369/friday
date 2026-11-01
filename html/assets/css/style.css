@@ -238,7 +238,8 @@
   box-sizing: border-box;
 }
 html {
-  scroll-behavior: smooth;
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
 }
 html.lenis, html.lenis body {
   height: auto;
