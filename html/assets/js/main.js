@@ -34,9 +34,18 @@ document.addEventListener('DOMContentLoaded', () => {
 function initMobileNav() {
   const menuBtn = document.querySelector('.menu-button');
   const nav = document.querySelector('.nav');
+  const searchPanel = document.querySelector('.header-search-panel');
+  const searchBtns = document.querySelectorAll('button.search, button.mobile-search-button');
   if (!menuBtn || !nav) return;
 
   menuBtn.addEventListener('click', () => {
+    if (searchPanel && !searchPanel.hasAttribute('hidden')) {
+      searchPanel.setAttribute('hidden', '');
+      searchBtns.forEach((btn) => {
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', 'Open search');
+      });
+    }
     const isOpen = nav.classList.toggle('nav-open');
     menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     menuBtn.textContent = isOpen ? 'CLOSE' : 'MENU';
@@ -55,28 +64,43 @@ function initMobileNav() {
 /* 2. Header Search Bar                                                       */
 /* -------------------------------------------------------------------------- */
 function initSearch() {
-  const searchBtn = document.querySelector('button.search');
+  const searchBtns = document.querySelectorAll('button.search, button.mobile-search-button');
   const searchPanel = document.querySelector('.header-search-panel');
-  if (!searchBtn || !searchPanel) return;
+  const nav = document.querySelector('.nav');
+  const menuBtn = document.querySelector('.menu-button');
+  if (!searchBtns.length || !searchPanel) return;
 
   const toggleSearch = (forceState) => {
     const isVisible = forceState !== undefined ? forceState : searchPanel.hasAttribute('hidden');
     if (isVisible) {
+      if (nav && nav.classList.contains('nav-open')) {
+        nav.classList.remove('nav-open');
+        if (menuBtn) {
+          menuBtn.setAttribute('aria-expanded', 'false');
+          menuBtn.textContent = 'MENU';
+        }
+      }
       searchPanel.removeAttribute('hidden');
-      searchBtn.setAttribute('aria-expanded', 'true');
-      searchBtn.setAttribute('aria-label', 'Close search');
+      searchBtns.forEach((btn) => {
+        btn.setAttribute('aria-expanded', 'true');
+        btn.setAttribute('aria-label', 'Close search');
+      });
       const input = searchPanel.querySelector('input[name="q"]');
       if (input) input.focus();
     } else {
       searchPanel.setAttribute('hidden', '');
-      searchBtn.setAttribute('aria-expanded', 'false');
-      searchBtn.setAttribute('aria-label', 'Open search');
+      searchBtns.forEach((btn) => {
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', 'Open search');
+      });
     }
   };
 
-  searchBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    toggleSearch();
+  searchBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      toggleSearch();
+    });
   });
 
   searchPanel.addEventListener('submit', (e) => {

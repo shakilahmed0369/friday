@@ -61,6 +61,8 @@ a, button { transition: color .2s ease, background-color .2s ease, border-color 
 .mark { width: 30px; height: 30px; }
 .masthead p { font-size: 9px; font-weight: 700; letter-spacing: .14em; line-height: 1.5; }
 .issue { text-align: right; }
+.masthead-actions { display: none; }
+.mobile-search-button { display: none; }
 .menu-button { display: none; border: 0; background: transparent; font-size: 11px; font-weight: 800; letter-spacing: .12em; }
 .nav { display: grid; grid-template-columns: repeat(7, 1fr) 56px 112px; border-top: 1px solid var(--ink); height: 49px; }
 .nav a, .nav button { position: relative; display: grid; place-items: center; border: 0; border-left: 1px solid var(--ink); background: transparent; font-size: 10px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
@@ -435,10 +437,14 @@ a, button { transition: color .2s ease, background-color .2s ease, border-color 
 @media (max-width: 640px) {
   :root { --gutter: 20px; --section-title-height: 132px; }
   .page-shell { border-left: 0; border-right: 0; border-inline: 0; box-shadow: none; }
-  .masthead { min-height: 68px; padding: 0 16px; grid-template-columns: 1fr auto; }
+  .masthead { min-height: 68px; padding: 0 16px; grid-template-columns: 1fr auto; align-items: center; }
   .masthead > p { display: none; }
+  .masthead-actions { display: flex; align-items: center; gap: 16px; }
+  .mobile-search-button { display: grid; place-items: center; width: 36px; height: 36px; border: 0; background: transparent; padding: 0; color: var(--ink); cursor: pointer; }
+  .mobile-search-button .icon { width: 22px; height: 22px; display: block; }
   .menu-button { display: block; }
   .nav { display: none; height: auto; grid-template-columns: 1fr; }
+  .nav .search { display: none !important; }
   .nav-open { display: grid; }
   .nav a, .nav button { min-height: 50px; border-left: 0; border-top: 1px solid var(--ink); }
   .nav .active::after { display: none; }

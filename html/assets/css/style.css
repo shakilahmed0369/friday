@@ -361,6 +361,12 @@ a, button {
 .issue {
   text-align: right;
 }
+.masthead-actions {
+  display: none;
+}
+.mobile-search-button {
+  display: none;
+}
 .menu-button {
   display: none;
   border: 0;
@@ -2242,9 +2248,31 @@ a, button {
     min-height: 68px;
     padding: 0 16px;
     grid-template-columns: 1fr auto;
+    align-items: center;
   }
   .masthead > p {
     display: none;
+  }
+  .masthead-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .mobile-search-button {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    color: var(--ink);
+    cursor: pointer;
+  }
+  .mobile-search-button .icon {
+    width: 22px;
+    height: 22px;
+    display: block;
   }
   .menu-button {
     display: block;
@@ -2253,6 +2281,9 @@ a, button {
     display: none;
     height: auto;
     grid-template-columns: 1fr;
+  }
+  .nav .search {
+    display: none !important;
   }
   .nav-open {
     display: grid;

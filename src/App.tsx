@@ -103,9 +103,31 @@ export function AppHeader() {
         </Link>
         <p>INDEPENDENT JOURNALISM<br />FOR A CURIOUS WORLD</p>
         <p className="issue">TUESDAY, JUNE 24<br />EDITION № 218</p>
-        <button className="menu-button" type="button" onClick={() => setOpen(!open)} aria-expanded={open}>
-          {open ? 'CLOSE' : 'MENU'}
-        </button>
+        <div className="masthead-actions">
+          <button
+            className="mobile-search-button"
+            type="button"
+            aria-label={searchOpen ? 'Close search' : 'Open search'}
+            aria-expanded={searchOpen}
+            onClick={() => {
+              if (!searchOpen) setOpen(false)
+              setSearchOpen((val) => !val)
+            }}
+          >
+            <SearchIcon />
+          </button>
+          <button
+            className="menu-button"
+            type="button"
+            onClick={() => {
+              if (!open) setSearchOpen(false)
+              setOpen(!open)
+            }}
+            aria-expanded={open}
+          >
+            {open ? 'CLOSE' : 'MENU'}
+          </button>
+        </div>
       </div>
       <nav className={open ? 'nav nav-open' : 'nav'} aria-label="Main navigation">
         {nav.map((item, index) => {
