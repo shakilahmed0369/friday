@@ -53,7 +53,27 @@ a, button { transition: color .2s ease, background-color .2s ease, border-color 
 
 .skip-link { position: fixed; left: 12px; top: -60px; z-index: 20; background: var(--ink); color: var(--paper); padding: 12px; }
 .skip-link:focus { top: 12px; }
-:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+:focus-visible:not(input):not(textarea):not(select) { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+/* Remove all input focus borders across all designs */
+input:focus,
+input:focus-visible,
+textarea:focus,
+textarea:focus-visible,
+select:focus,
+select:focus-visible,
+.header-search-panel input:focus,
+.header-search-panel input:focus-visible,
+.newsletter input:focus,
+.newsletter input:focus-visible,
+.auth-field input:focus,
+.auth-field input:focus-visible,
+.auth-check input:focus,
+.auth-check input:focus-visible {
+  outline: none !important;
+  outline-offset: 0 !important;
+  box-shadow: none !important;
+}
 
 .header { border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
 .masthead { min-height: 96px; display: grid; grid-template-columns: 1fr auto auto; align-items: center; padding: 0 32px; gap: 56px; }

@@ -324,9 +324,14 @@ a, button {
 .skip-link:focus {
   top: 12px;
 }
-:focus-visible {
+:focus-visible:not(input):not(textarea):not(select) {
   outline: 2px solid var(--ink);
   outline-offset: 3px;
+}
+input:focus, input:focus-visible, textarea:focus, textarea:focus-visible, select:focus, select:focus-visible, .header-search-panel input:focus, .header-search-panel input:focus-visible, .newsletter input:focus, .newsletter input:focus-visible, .auth-field input:focus, .auth-field input:focus-visible, .auth-check input:focus, .auth-check input:focus-visible {
+  outline: none !important;
+  outline-offset: 0 !important;
+  box-shadow: none !important;
 }
 .header {
   border-top: 1px solid var(--ink);
