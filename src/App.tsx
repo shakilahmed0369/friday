@@ -312,11 +312,16 @@ export default function HomePage() {
 
     const cleanups: Array<() => void> = []
     const context = gsap.context(() => {
-      gsap.set('.reading-progress', { scaleX: 0, transformOrigin: 'left center' })
+      gsap.set('.reading-progress', { scaleX: 0, transformOrigin: 'left center', opacity: 0 })
       ScrollTrigger.create({
-        start: 0,
+        start: 10,
         end: () => ScrollTrigger.maxScroll(window),
-        onUpdate: ({ progress }) => gsap.set('.reading-progress', { scaleX: progress }),
+        onUpdate: ({ progress }) => {
+          gsap.set('.reading-progress', {
+            scaleX: progress,
+            opacity: progress > 0.005 ? 1 : 0,
+          })
+        },
       })
 
       // Keep header rock-solid on page navigation
@@ -424,7 +429,7 @@ export default function HomePage() {
 
   return (
     <div className="page-shell" ref={appRef}>
-      <div className="reading-progress" aria-hidden="true" />
+      <div className="reading-progress" aria-hidden="true" style={{ transform: 'scaleX(0)', transformOrigin: '0 0', opacity: 0 }} />
       <AppHeader />
       <main id="main">
         <Hero />

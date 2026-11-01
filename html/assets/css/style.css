@@ -311,7 +311,11 @@ a, button {
   height: 3px;
   background: var(--ink);
   pointer-events: none;
-  will-change: transform;
+  transform: scaleX(0);
+  transform-origin: 0 0;
+  opacity: 0;
+  transition: opacity .2s ease;
+  will-change: transform, opacity;
 }
 .skip-link {
   position: fixed;

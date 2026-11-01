@@ -52,7 +52,21 @@ a, button { transition: color .2s ease, background-color .2s ease, border-color 
   background-color: var(--paper);
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
 }
-.reading-progress { position: fixed; top: 0; left: 0; z-index: 100; width: 100%; height: 3px; background: var(--ink); pointer-events: none; will-change: transform; }
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 3px;
+  background: var(--ink);
+  pointer-events: none;
+  transform: scaleX(0);
+  transform-origin: 0 0;
+  opacity: 0;
+  transition: opacity .2s ease;
+  will-change: transform, opacity;
+}
 
 .skip-link { position: fixed; left: 12px; top: -60px; z-index: 20; background: var(--ink); color: var(--paper); padding: 12px; }
 .skip-link:focus { top: 12px; }

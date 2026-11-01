@@ -125,6 +125,7 @@ function initReadingProgress() {
     const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
     const progress = scrollTotal > 0 ? Math.min(Math.max(window.scrollY / scrollTotal, 0), 1) : 0;
     progressBar.style.transform = `scaleX(${progress})`;
+    progressBar.style.opacity = progress > 0.005 ? '1' : '0';
   };
 
   window.addEventListener('scroll', updateProgress, { passive: true });
