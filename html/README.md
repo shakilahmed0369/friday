@@ -31,7 +31,8 @@ html/
 │   │   └── vendor/                 # Downloaded local vendor packages (no CDN dependency required)
 │   │       ├── gsap.min.js         # GSAP 3.15.0 core library
 │   │       ├── ScrollTrigger.min.js# GSAP ScrollTrigger plugin
-│   │       └── ScrollToPlugin.min.js# GSAP ScrollToPlugin
+│   │       ├── ScrollToPlugin.min.js# GSAP ScrollToPlugin
+│   │       └── lenis.min.js        # Lenis momentum smooth scroll library
 │   └── images/
 │       ├── favicon.svg             # SVG site mark
 │       └── news/                   # Local photo assets

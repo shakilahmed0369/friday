@@ -15,12 +15,12 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initSmoothScroll();
   initMobileNav();
   initSearch();
   initReadingProgress();
   initHeroCarousel();
   initGsapAnimations();
-  initSmoothScroll();
   initHoverEffects();
   initCategoryPage();
   initArticleShare();
@@ -102,6 +102,9 @@ function initReadingProgress() {
 
   window.addEventListener('scroll', updateProgress, { passive: true });
   window.addEventListener('resize', updateProgress, { passive: true });
+  if (typeof lenis !== 'undefined' && lenis) {
+    lenis.on('scroll', updateProgress);
+  }
   updateProgress();
 }
 
@@ -316,9 +319,46 @@ function initGsapAnimations() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* 6. Smooth Scroll for Anchor Links                                          */
+/* 6. Smooth Momentum Scroll (Lenis + GSAP Synchronized)                      */
 /* -------------------------------------------------------------------------- */
+let lenis = null;
+
 function initSmoothScroll() {
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Initialize Lenis momentum inertia smooth scrolling if library is loaded
+  if (typeof Lenis !== 'undefined' && !prefersReduced) {
+    try {
+      lenis = new Lenis({
+        duration: 1.15,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        orientation: 'vertical',
+        gestureOrientation: 'vertical',
+        smoothWheel: true,
+        wheelMultiplier: 1.05,
+        touchMultiplier: 1.5,
+      });
+
+      // Synchronize Lenis with GSAP ScrollTrigger ticker
+      if (typeof ScrollTrigger !== 'undefined') {
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => {
+          lenis.raf(time * 1000);
+        });
+        gsap.ticker.lagSmoothing(0);
+      } else {
+        function raf(time) {
+          lenis.raf(time);
+          requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+      }
+    } catch (err) {
+      console.warn('Lenis initialization skipped:', err);
+    }
+  }
+
+  // Anchor links smooth navigation
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener('click', (event) => {
       const href = link.getAttribute('href');
@@ -327,7 +367,9 @@ function initSmoothScroll() {
       if (!target) return;
 
       event.preventDefault();
-      if (typeof gsap !== 'undefined' && typeof ScrollToPlugin !== 'undefined' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      if (lenis) {
+        lenis.scrollTo(target, { offset: -24, duration: 1.1 });
+      } else if (typeof gsap !== 'undefined' && typeof ScrollToPlugin !== 'undefined' && !prefersReduced) {
         gsap.to(window, { scrollTo: { y: target, offsetY: 24 }, duration: 0.9, ease: 'power3.inOut' });
       } else {
         target.scrollIntoView({ behavior: 'smooth' });
