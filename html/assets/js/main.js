@@ -264,42 +264,54 @@ function initGsapAnimations() {
   }
 
   if (typeof ScrollTrigger !== 'undefined') {
-    gsap.utils.toArray('.section-heading').forEach((heading) => {
-      gsap.from(heading.children, {
-        y: 28,
-        opacity: 0,
-        duration: 0.7,
-        stagger: 0.08,
-        ease: 'power3.out',
-        scrollTrigger: { trigger: heading, start: 'top 86%', once: true },
-      });
-    });
-
-    ScrollTrigger.batch(
-      '.breaking-updates article, .category-posts article, .story-card, .editor-list article, .most-read li, .video-card',
-      {
-        start: 'top 90%',
-        once: true,
-        onEnter: (items) =>
-          gsap.fromTo(
-            items,
-            { y: 24, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.6, stagger: 0.055, ease: 'power3.out', overwrite: true }
-          ),
-      }
+    // Smooth, cohesive section reveals (prevents popping and layout shifts)
+    const revealSections = document.querySelectorAll(
+      '.breaking-section, .category-news-group, .statement, .card-grid, .editors-picks, .most-read, .opinion, .visual-stories, .newsletter, .category-lead, .listing-grid, .article-related'
     );
 
-    gsap.utils
-      .toArray('.breaking-lead, .editor-lead, .opinion article, .visual-main, .visual-side, .newsletter')
-      .forEach((panel) => {
-        gsap.from(panel, {
-          y: 30,
-          opacity: 0,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: { trigger: panel, start: 'top 88%', once: true },
-        });
+    revealSections.forEach((section) => {
+      const heading = section.querySelector('.section-heading, header');
+      const cards = section.querySelectorAll(
+        '.breaking-lead, .breaking-updates article, .category-posts article, .story-card, .editor-lead, .editor-list article, .most-read li, .opinion article, .visual-main, .visual-side, .video-card, .listing-grid article, .article-related article'
+      );
+
+      const sectionTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          start: 'top 88%',
+          once: true,
+        },
       });
+
+      if (heading) {
+        sectionTl.fromTo(
+          heading,
+          { opacity: 0, y: 14 },
+          { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out', clearProps: 'transform,opacity' }
+        );
+      }
+
+      if (cards.length > 0) {
+        sectionTl.fromTo(
+          cards,
+          { opacity: 0, y: 16 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.5,
+            stagger: 0.05,
+            ease: 'power2.out',
+            clearProps: 'transform,opacity',
+          },
+          heading ? '-=0.3' : 0
+        );
+      }
+    });
+
+    // Refresh triggers once images and fonts are loaded to guarantee exact positioning
+    window.addEventListener('load', () => {
+      ScrollTrigger.refresh();
+    });
   }
 }
 
@@ -339,13 +351,13 @@ function initHoverEffects() {
     const arrow = card.querySelector('.card-arrow, .category-post-arrow, .listing-arrow, .arrow');
 
     card.addEventListener('pointerenter', () => {
-      if (image) gsap.to(image, { scale: 1.035, duration: 0.4, ease: 'power2.out' });
-      if (arrow) gsap.to(arrow, { x: 4, y: -4, duration: 0.25, ease: 'power2.out' });
+      if (image) gsap.to(image, { scale: 1.035, duration: 0.4, ease: 'power2.out', overwrite: 'auto' });
+      if (arrow) gsap.to(arrow, { x: 4, y: -4, duration: 0.25, ease: 'power2.out', overwrite: 'auto' });
     });
 
     card.addEventListener('pointerleave', () => {
-      if (image) gsap.to(image, { scale: 1, duration: 0.45, ease: 'power2.out' });
-      if (arrow) gsap.to(arrow, { x: 0, y: 0, duration: 0.3, ease: 'power2.out' });
+      if (image) gsap.to(image, { scale: 1, duration: 0.45, ease: 'power2.out', overwrite: 'auto' });
+      if (arrow) gsap.to(arrow, { x: 0, y: 0, duration: 0.3, ease: 'power2.out', overwrite: 'auto' });
     });
   });
 }

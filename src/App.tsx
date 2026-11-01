@@ -300,42 +300,52 @@ export default function HomePage() {
         )
         .from('.crop-frame, .headlines, .feature', { y: 22, opacity: 0, duration: 0.7, stagger: 0.1 }, '-=.45')
 
-      gsap.utils.toArray<HTMLElement>('.section-heading').forEach((heading) => {
-        gsap.from(heading.children, {
-          y: 28,
-          opacity: 0,
-          duration: 0.7,
-          stagger: 0.08,
-          ease: 'power3.out',
-          scrollTrigger: { trigger: heading, start: 'top 86%', once: true },
-        })
-      })
-
-      ScrollTrigger.batch(
-        '.breaking-updates article, .category-posts article, .story-card, .editor-list article, .most-read li, .video-card',
-        {
-          start: 'top 90%',
-          once: true,
-          onEnter: (items) =>
-            gsap.fromTo(
-              items,
-              { y: 24, opacity: 0 },
-              { y: 0, opacity: 1, duration: 0.6, stagger: 0.055, ease: 'power3.out', overwrite: true },
-            ),
-        },
+      const revealSections = root.querySelectorAll<HTMLElement>(
+        '.breaking-section, .category-news-group, .statement, .card-grid, .editors-picks, .most-read, .opinion, .visual-stories, .newsletter'
       )
 
-      gsap.utils
-        .toArray<HTMLElement>('.breaking-lead, .editor-lead, .opinion article, .visual-main, .visual-side, .newsletter')
-        .forEach((panel) => {
-          gsap.from(panel, {
-            y: 30,
-            opacity: 0,
-            duration: 0.8,
-            ease: 'power3.out',
-            scrollTrigger: { trigger: panel, start: 'top 88%', once: true },
-          })
+      revealSections.forEach((section) => {
+        const heading = section.querySelector<HTMLElement>('.section-heading, header')
+        const cards = section.querySelectorAll<HTMLElement>(
+          '.breaking-lead, .breaking-updates article, .category-posts article, .story-card, .editor-lead, .editor-list article, .most-read li, .opinion article, .visual-main, .visual-side, .video-card'
+        )
+
+        const sectionTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: section,
+            start: 'top 88%',
+            once: true,
+          },
         })
+
+        if (heading) {
+          sectionTl.fromTo(
+            heading,
+            { opacity: 0, y: 14 },
+            { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out', clearProps: 'transform,opacity' }
+          )
+        }
+
+        if (cards.length > 0) {
+          sectionTl.fromTo(
+            cards,
+            { opacity: 0, y: 16 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.5,
+              stagger: 0.05,
+              ease: 'power2.out',
+              clearProps: 'transform,opacity',
+            },
+            heading ? '-=0.3' : 0
+          )
+        }
+      })
+
+      window.addEventListener('load', () => {
+        ScrollTrigger.refresh()
+      })
 
       root.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach((link) => {
         const onClick = (event: MouseEvent) => {
