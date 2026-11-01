@@ -324,19 +324,19 @@ export default function HomePage() {
         },
       })
 
-      // Keep header rock-solid on page navigation
+      // Pure opacity fade without vertical movement to prevent layout jumps on reload
       gsap
         .timeline({ defaults: { ease: 'power2.out' } })
         .fromTo(
           '.lead > .eyebrow, .lead > h1, .lead > .meta, .lead > h2, .lead > .intro',
-          { opacity: 0, y: 12 },
-          { opacity: 1, y: 0, duration: 0.5, stagger: 0.05, clearProps: 'all' },
+          { opacity: 0 },
+          { opacity: 1, duration: 0.35, stagger: 0.03, clearProps: 'opacity' },
         )
         .fromTo(
           '.crop-frame, .headlines, .feature',
-          { opacity: 0, y: 12 },
-          { opacity: 1, y: 0, duration: 0.55, stagger: 0.06, clearProps: 'all' },
-          '-=.35',
+          { opacity: 0 },
+          { opacity: 1, duration: 0.4, stagger: 0.04, clearProps: 'opacity' },
+          '-=.25',
         )
 
       const revealSections = root.querySelectorAll<HTMLElement>(

@@ -275,19 +275,19 @@ function initGsapAnimations() {
     gsap.registerPlugin(ScrollToPlugin);
   }
 
-  // Never animate the persistent masthead and nav on page switch to keep layout rock-solid
+  // Pure opacity fade without vertical movement to prevent layout jumps on reload
   if (document.querySelector('.lead')) {
     gsap.fromTo(
       '.lead > .eyebrow, .lead > h1, .lead > .meta, .lead > h2, .lead > .intro',
-      { opacity: 0, y: 12 },
-      { opacity: 1, y: 0, duration: 0.5, stagger: 0.05, ease: 'power2.out', clearProps: 'all' }
+      { opacity: 0 },
+      { opacity: 1, duration: 0.35, stagger: 0.03, ease: 'power2.out', clearProps: 'opacity' }
     );
   }
   if (document.querySelector('.crop-frame, .headlines, .feature')) {
     gsap.fromTo(
       '.crop-frame, .headlines, .feature',
-      { opacity: 0, y: 12 },
-      { opacity: 1, y: 0, duration: 0.55, stagger: 0.06, ease: 'power2.out', clearProps: 'all' }
+      { opacity: 0 },
+      { opacity: 1, duration: 0.4, stagger: 0.04, ease: 'power2.out', clearProps: 'opacity' }
     );
   }
 
