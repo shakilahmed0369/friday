@@ -31,3 +31,12 @@ export function PlayIcon() {
     </svg>
   )
 }
+
+export function UserIcon() {
+  return (
+    <svg className="icon" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" strokeWidth="1.75" />
+      <path d="M4.5 20c0-3.85 3.35-7 7.5-7s7.5 3.15 7.5 7" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
+    </svg>
+  )
+}

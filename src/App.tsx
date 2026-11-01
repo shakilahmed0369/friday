@@ -3,7 +3,7 @@ import { gsap } from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Link, useLocation, useNavigate } from 'react-router'
-import { ArrowIcon, PlayIcon, SearchIcon } from './components/Icon'
+import { ArrowIcon, PlayIcon, SearchIcon, UserIcon } from './components/Icon'
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
@@ -116,6 +116,14 @@ export function AppHeader() {
           >
             <SearchIcon />
           </button>
+          <Link
+            className="mobile-auth-link"
+            to="/sign-in"
+            aria-label="Sign in"
+            onClick={() => setOpen(false)}
+          >
+            <UserIcon />
+          </Link>
           <button
             className="menu-button"
             type="button"
