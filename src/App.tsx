@@ -305,6 +305,7 @@ export function SiteFooter() {
 
 export default function HomePage() {
   const appRef = useRef<HTMLDivElement>(null)
+  const [subscribed, setSubscribed] = useState(false)
 
   useLayoutEffect(() => {
     const root = appRef.current
@@ -312,18 +313,6 @@ export default function HomePage() {
 
     const cleanups: Array<() => void> = []
     const context = gsap.context(() => {
-      gsap.set('.reading-progress', { scaleX: 0, transformOrigin: 'left center', opacity: 0 })
-      ScrollTrigger.create({
-        start: 10,
-        end: () => ScrollTrigger.maxScroll(window),
-        onUpdate: ({ progress }) => {
-          gsap.set('.reading-progress', {
-            scaleX: progress,
-            opacity: progress > 0.005 ? 1 : 0,
-          })
-        },
-      })
-
       // Pure opacity fade without vertical movement to prevent layout jumps on reload
       gsap
         .timeline({ defaults: { ease: 'power2.out' } })
@@ -429,7 +418,6 @@ export default function HomePage() {
 
   return (
     <div className="page-shell" ref={appRef}>
-      <div className="reading-progress" aria-hidden="true" style={{ transform: 'scaleX(0)', transformOrigin: '0 0', opacity: 0 }} />
       <AppHeader />
       <main id="main">
         <Hero />
@@ -635,10 +623,22 @@ export default function HomePage() {
           <p className="eyebrow">THE MORNING EDITION</p>
           <h2>THE DAY, EDITED.</h2>
           <p>Essential news and original reporting, delivered before your first coffee.</p>
-          <form onSubmit={(event) => event.preventDefault()}>
+          <form
+            onSubmit={(event) => {
+              event.preventDefault()
+              const form = event.currentTarget
+              const input = form.querySelector<HTMLInputElement>('input[type="email"]')
+              if (!input?.value) return
+              setSubscribed(true)
+              input.value = ''
+              setTimeout(() => setSubscribed(false), 4000)
+            }}
+          >
             <label htmlFor="email">EMAIL ADDRESS</label>
             <input id="email" type="email" placeholder="you@example.com" required />
-            <button type="submit">JOIN THE LIST <ArrowIcon /></button>
+            <button type="submit" disabled={subscribed}>
+              {subscribed ? 'SUBSCRIBED ✓' : <>JOIN THE LIST <ArrowIcon /></>}
+            </button>
           </form>
         </section>
       </main>

@@ -1946,6 +1946,12 @@ input:focus, input:focus-visible, textarea:focus, textarea:focus-visible, select
 .article-related article + article {
   border-left: 1px solid var(--ink);
 }
+.article-related article > a {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-width: 0;
+}
 .article-related img {
   width: 100%;
   aspect-ratio: 16 / 10;
